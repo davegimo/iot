@@ -2,6 +2,9 @@
 
 BluemixIOT is a project created for my class Pervasive Systems A.Y. 2017-18 at Sapienza Università di Roma.
 
+## Presentation
+You can check my SlideShare presentation [here](https://www.slideshare.net/DavideGimondo/ibm-watson-iot)
+
 ## Code
 The code is composed by:
 + Android project of the app
@@ -17,5 +20,3 @@ The code is composed by:
 Linkedin: [Davide Gimondo](https://www.linkedin.com/in/davegimo/)
 
 
-## Presentation
-You can check my SlideShare presentation [here](https://www.slideshare.net/DavideGimondo/ibm-watson-iot)
