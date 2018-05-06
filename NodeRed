@@ -1,1 +1,165 @@
-+[{"id":"3bb8b7a2.ee20f8","type":"tab","label":"Flow 2","disabled":false,"info":""},{"id":"47669891.8db2c8","type":"ibmiot in","z":"3bb8b7a2.ee20f8","authentication":"boundService","apiKey":"","inputType":"evt","logicalInterface":"","ruleId":"","deviceId":"123456","applicationId":"","deviceType":"+","eventType":"+","commandType":"","format":"json","name":"IBM IoT","service":"registered","allDevices":"","allApplications":"","allDeviceTypes":true,"allLogicalInterfaces":"","allEvents":true,"allCommands":"","allFormats":"","qos":0,"x":180,"y":440,"wires":[["29925c6b.53ab14","a9a4bc06.a6d62"]]},{"id":"29925c6b.53ab14","type":"debug","z":"3bb8b7a2.ee20f8","name":"","active":false,"tosidebar":true,"console":false,"tostatus":false,"complete":"false","x":490,"y":440,"wires":[]},{"id":"a9a4bc06.a6d62","type":"function","z":"3bb8b7a2.ee20f8","name":"getAcceleration_y","func":"return {payload: Math.abs(msg.payload.d.acceleration_y)};","outputs":1,"noerr":0,"x":210,"y":160,"wires":[["ef44f9d.5591008"]]},{"id":"ef44f9d.5591008","type":"switch","z":"3bb8b7a2.ee20f8","name":"testAcceleration_y","property":"payload","propertyType":"msg","rules":[{"t":"gte","v":"4","vt":"str"}],"checkall":"false","repair":false,"outputs":1,"x":430,"y":200,"wires":[["60aff817.52e238"]]},{"id":"60aff817.52e238","type":"template","z":"3bb8b7a2.ee20f8","name":"Acceleration_y_exceed_message","field":"payload","fieldType":"msg","format":"handlebars","syntax":"mustache","template":"Wow! Is your phone falling? \nIts acceleration y = {{payload}}!","output":"str","x":700,"y":240,"wires":[["412f5e24.c9bc6"]]},{"id":"412f5e24.c9bc6","type":"delay","z":"3bb8b7a2.ee20f8","name":"Limit Rate","pauseType":"delay","timeout":"5","timeoutUnits":"seconds","rate":"1","nbRateUnits":"1","rateUnits":"second","randomFirst":"1","randomLast":"5","randomUnits":"seconds","drop":false,"x":940,"y":280,"wires":[["bf001a46.bfc878","1ef8313b.e30edf"]]},{"id":"bf001a46.bfc878","type":"debug","z":"3bb8b7a2.ee20f8","name":"","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"false","x":1090,"y":180,"wires":[]},{"id":"1ef8313b.e30edf","type":"twitter out","z":"3bb8b7a2.ee20f8","twitter":"","name":"Tweet","x":1100,"y":380,"wires":[]}]
+[
+    {
+        "id": "8a44124.295b3f",
+        "type": "tab",
+        "label": "Flow 2",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "dc9c2cf9.e0593",
+        "type": "ibmiot in",
+        "z": "8a44124.295b3f",
+        "authentication": "boundService",
+        "apiKey": "",
+        "inputType": "evt",
+        "logicalInterface": "",
+        "ruleId": "",
+        "deviceId": "123456",
+        "applicationId": "",
+        "deviceType": "+",
+        "eventType": "+",
+        "commandType": "",
+        "format": "json",
+        "name": "IBM IoT",
+        "service": "registered",
+        "allDevices": "",
+        "allApplications": "",
+        "allDeviceTypes": true,
+        "allLogicalInterfaces": "",
+        "allEvents": true,
+        "allCommands": "",
+        "allFormats": "",
+        "qos": 0,
+        "x": 180,
+        "y": 440,
+        "wires": [
+            [
+                "312cd893.430b38",
+                "ceda394.b92c6c8"
+            ]
+        ]
+    },
+    {
+        "id": "312cd893.430b38",
+        "type": "debug",
+        "z": "8a44124.295b3f",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "x": 490,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "ceda394.b92c6c8",
+        "type": "function",
+        "z": "8a44124.295b3f",
+        "name": "getAcceleration_y",
+        "func": "return {payload: Math.abs(msg.payload.d.acceleration_y)};",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 210,
+        "y": 160,
+        "wires": [
+            [
+                "847762d1.9dde7"
+            ]
+        ]
+    },
+    {
+        "id": "847762d1.9dde7",
+        "type": "switch",
+        "z": "8a44124.295b3f",
+        "name": "testAcceleration_y",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "gte",
+                "v": "4",
+                "vt": "str"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 1,
+        "x": 430,
+        "y": 200,
+        "wires": [
+            [
+                "7bf077fc.be1d58"
+            ]
+        ]
+    },
+    {
+        "id": "7bf077fc.be1d58",
+        "type": "template",
+        "z": "8a44124.295b3f",
+        "name": "Acceleration_y_exceed_message",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "Ti sta cascando il cellulare?!\nLa sua accelerazione è di {{payload}}!\n#PervasiveSystems2018",
+        "output": "str",
+        "x": 700,
+        "y": 240,
+        "wires": [
+            [
+                "ae3bd26d.24c3e"
+            ]
+        ]
+    },
+    {
+        "id": "ae3bd26d.24c3e",
+        "type": "delay",
+        "z": "8a44124.295b3f",
+        "name": "Limit Rate",
+        "pauseType": "delay",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "x": 940,
+        "y": 280,
+        "wires": [
+            [
+                "5b150ab1.7f1864",
+                "4addc544.6dd68c"
+            ]
+        ]
+    },
+    {
+        "id": "5b150ab1.7f1864",
+        "type": "debug",
+        "z": "8a44124.295b3f",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "x": 1090,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "4addc544.6dd68c",
+        "type": "twitter out",
+        "z": "8a44124.295b3f",
+        "twitter": "",
+        "name": "Tweet",
+        "x": 1100,
+        "y": 380,
+        "wires": []
+    }
+]
