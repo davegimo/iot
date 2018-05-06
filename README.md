@@ -9,7 +9,7 @@ The code is composed by:
 
 
 ## Architecture
- ![Architecture]https://github.com/davegimo/iot/blob/master/bluemix.png "architecture")
+ ([Architecture]https://github.com/davegimo/iot/blob/master/bluemix.png "architecture")
 
 
 ## Contacts
