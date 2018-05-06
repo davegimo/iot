@@ -114,8 +114,7 @@ public class IotApplication extends Application {
         myIoTCallbacks = MyIoTCallbacks.getInstance(this);
     }
 
-
-
+    
     /**
      * Turn flashlight on or off when a light command message is received.
      * @param newState Toggle light when null, otherwise switch on or off.
